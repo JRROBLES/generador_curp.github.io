@@ -1,0 +1,137 @@
+<!-- Código escrito por Jesús Rodríguez para el CS T-III Portales -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/normalize.css">
+    <link rel="stylesheet" href="estilos/css.css">
+    <title>Generador de CURP</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="titulo">
+            <h1>
+                Generador de CURP<br>
+                (en desarrollo)
+            </h1>
+        </div>
+        <form action="" class="formulario">
+            <label for="Nombre">Nombre(s):</label>
+            <input type="text" id="Nombre">
+            <label for="Apellido_Paterno">Apellido Paterno:</label>
+            <input type="text" id="Apellido_Paterno">
+            <label for="Apellido_Materno">Apellido Materno:</label>
+            <input type="text" id="Apellido_Materno">
+            <label for="dia_Nacimiento">Día de nacimiento:</label>
+            <select id="dia_Nacimiento">
+                <option value="" disabled="" selected="">Selecciona el día de nacimiento</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <label for="mes_Nacimiento">Mes de nacimiento:</label>
+            <select id="mes_Nacimiento">
+                <option value="" disabled="" selected="">Selecciona el mes de nacimiento</option>
+                <option value="01">01.- ENERO</option>
+                <option value="02">02.- FEBRERO</option>
+                <option value="03">03.- MARZO</option>
+                <option value="04">04.- ABRIL</option>
+                <option value="05">05.- MAYO</option>
+                <option value="06">06.- JUNIO</option>
+                <option value="07">07.- JULIO</option>
+                <option value="08">08.- AGOSTO</option>
+                <option value="09">09.- SEPTIEMBRE</option>
+                <option value="10">10.- OCTUBRE</option>
+                <option value="11">11.- NOVIEMBRE</option>
+                <option value="12">12.- DICIEMBRE</option>
+            </select>
+            <label for="anio_Nacimiento">Año de nacimiento:</label>
+            <input type="number" id="anio_Nacimiento" min="1900" max="2023" placeholder="ESCRIBE EL AÑO DE NACIMIENTO">
+            <label for="Sexo">Sexo de nacimiento:</label>
+            <select id="Sexo">
+                <option value="" disabled="" selected="">Selecciona el Genero</option>
+                <option value="M">Femenino</option>
+                <option value="H">Masculino</option>
+            </select>
+            <label for="Entidad_Nacimiento">Entidad de nacimiento:</label>
+            <select id="Entidad_Nacimiento">
+                <option value="" disabled="" selected="">Selecciona el estado</option>
+                <option value="AS">Aguascalientes</option>
+                <option value="BC">Baja California</option>
+                <option value="BS">Baja California Sur</option>
+                <option value="CC">Campeche</option>
+                <option value="CL">Coahuila</option>
+                <option value="CM">Colima</option>
+                <option value="CS">Chiapas</option>
+                <option value="CH">Chihuahua</option>
+                <option value="DF">Ciudad de México</option>
+                <option value="DG">Durango</option>
+                <option value="GT">Guanajuato</option>
+                <option value="GR">Guerrero</option>
+                <option value="HG">Hidalgo</option>
+                <option value="JC">Jalisco</option>
+                <option value="MC">Estado de México</option>
+                <option value="MN">Michoacán</option>
+                <option value="MS">Morelos</option>
+                <option value="NT">Nayarit</option>
+                <option value="NL">Nuevo León</option>
+                <option value="OC">Oaxaca</option>
+                <option value="PL">Puebla</option>
+                <option value="QT">Querétaro</option>
+                <option value="QR">Quintana Roo</option>
+                <option value="SP">San Luis Potosí</option>
+                <option value="SL">Sinaloa</option>
+                <option value="SR">Sonora</option>
+                <option value="TC">Tabasco</option>
+                <option value="TS">Tamaulipas</option>
+                <option value="TL">Tlaxcala</option>
+                <option value="VZ">Veracruz</option>
+                <option value="YN">Yucatán</option>
+                <option value="ZS">Zacatecas</option>
+                <option value="NE">Nacido en el extranjero</option>
+            </select>
+            <label for="salida">CURP:</label>
+            <input type="text" name="salida" id="salida" readonly>
+            <p class="btn" id="btn_calcular">Calcular</p>
+        </form>
+        <div class="descripcion">
+            <p>
+                Ingresa la información solicitada en todos los campos y presiona el botón "Calcular" para obtener la CURP.<br>
+                <span class="resaltar_texto">Todos los campos son necesarios.</span><br>
+                <span class="resaltar_texto">Evita el uso de caracteres especiales (", ', -, ., *, etc.).</span>
+            </p>
+        </div>
+    </div>    
+</body>
+    <script src="scripts/scripts.js"></script>
+</html>
