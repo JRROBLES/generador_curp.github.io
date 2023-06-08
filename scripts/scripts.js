@@ -1,5 +1,7 @@
 //Código escrito por Jesús Rodríguez para el CS T-III Portales
 document.querySelector('#btn_calcular').addEventListener('click',calcularCurp);
+document.querySelector('#btn_copiar').addEventListener('click',copiarCurp);
+document.querySelector('#btn_limpiar').addEventListener('click',recargarPagina);
 
 function calcularCurp(){
     // Recuerda que la ejecución de las funciones termina con el primer return que encuentre la función
@@ -143,4 +145,13 @@ function convertirAX(arreglo){
             arreglo[i] = "X"
         }
     }
+}
+
+function copiarCurp(){
+    navigator.clipboard.writeText(document.querySelector("#salida").value);
+    alert("El texto sé ha copiado al portapapeles");
+}
+
+function recargarPagina(){
+    document.location.reload();
 }
