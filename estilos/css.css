@@ -72,6 +72,11 @@ body  {
     display: flex;
     flex-direction: row;
 }
+.obligatorio{
+    font-weight: bold;
+    color: red;
+    font-size: 18px;
+}
 @media only screen and (max-width: 768px) {
     .contenedor{
         width: 90%;

@@ -17,13 +17,13 @@
             </h1>
         </div>
         <form action="" class="formulario">
-            <label for="Nombre">Nombre(s):</label>
+            <label for="Nombre">Nombre(s) <span class="obligatorio">* </span> :</label>
             <input type="text" id="Nombre" placeholder="Escribe el o los nombres">
-            <label for="Apellido_Paterno">Apellido Paterno:</label>
+            <label for="Apellido_Paterno">Apellido Paterno <span class="obligatorio">* </span> :</label>
             <input type="text" id="Apellido_Paterno" placeholder="Escribe el apellido paterno">
             <label for="Apellido_Materno">Apellido Materno:</label>
             <input type="text" id="Apellido_Materno" placeholder="Escribe el apellido materno">
-            <label for="dia_Nacimiento">Día de nacimiento:</label>
+            <label for="dia_Nacimiento">Día de nacimiento <span class="obligatorio">* </span> :</label>
             <select id="dia_Nacimiento">
                 <option value="" disabled="" selected="">Selecciona el día de nacimiento</option>
                 <option value="01">01</option>
@@ -58,7 +58,7 @@
                 <option value="30">30</option>
                 <option value="31">31</option>
             </select>
-            <label for="mes_Nacimiento">Mes de nacimiento:</label>
+            <label for="mes_Nacimiento">Mes de nacimiento <span class="obligatorio">* </span> :</label>
             <select id="mes_Nacimiento">
                 <option value="" disabled="" selected="">Selecciona el mes de nacimiento</option>
                 <option value="01">01.- ENERO</option>
@@ -74,15 +74,15 @@
                 <option value="11">11.- NOVIEMBRE</option>
                 <option value="12">12.- DICIEMBRE</option>
             </select>
-            <label for="anio_Nacimiento">Año de nacimiento:</label>
+            <label for="anio_Nacimiento">Año de nacimiento <span class="obligatorio">* </span> :</label>
             <input type="number" id="anio_Nacimiento" min="1900" max="2023" placeholder="ESCRIBE EL AÑO DE NACIMIENTO">
-            <label for="Sexo">Sexo de nacimiento:</label>
+            <label for="Sexo">Sexo de nacimiento <span class="obligatorio">* </span> :</label>
             <select id="Sexo">
                 <option value="" disabled="" selected="">Selecciona el Genero</option>
                 <option value="M">Femenino</option>
                 <option value="H">Masculino</option>
             </select>
-            <label for="Entidad_Nacimiento">Entidad de nacimiento:</label>
+            <label for="Entidad_Nacimiento">Entidad de nacimiento <span class="obligatorio">* </span> :</label>
             <select id="Entidad_Nacimiento">
                 <option value="" disabled="" selected="">Selecciona el estado</option>
                 <option value="AS">Aguascalientes</option>
@@ -130,7 +130,7 @@
         <div class="descripcion">
             <p>
                 Ingresa la información solicitada en todos los campos y presiona el botón "Calcular" para obtener la CURP.<br>
-                <span class="resaltar_texto">Todos los campos son necesarios.</span><br>
+                <span class="resaltar_texto">Los campos con <span class="obligatorio">*</span> son obligatorios.</span><br>
                 <span class="resaltar_texto">Evita el uso de caracteres especiales (", ', -, ., *, etc.).</span><br>
                 <span class="resaltar_texto">El CURP generado no es oficial.</span>
             </p>
