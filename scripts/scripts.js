@@ -1,7 +1,7 @@
 //Código escrito por Jesús Rodríguez para el CS T-III Portales
 document.querySelector('#btn_calcular').addEventListener('click',calcularCurp);
 document.querySelector('#btn_copiar').addEventListener('click',copiarCurp);
-document.querySelector('#btn_limpiar').addEventListener('click',recargarPagina);
+document.querySelector('#btn_limpiar').addEventListener('click',limpiarPagina);
 
 function calcularCurp(){
     // Recuerda que la ejecución de las funciones termina con el primer return que encuentre la función
@@ -156,6 +156,14 @@ function copiarCurp(){
 
 }
 
-function recargarPagina(){
-    document.location.reload();
+function limpiarPagina(){
+    document.querySelector("#Nombre").value="";
+    document.querySelector("#Apellido_Paterno").value = "";
+    document.querySelector("#Apellido_Materno").value = "";
+    document.querySelector("#dia_Nacimiento").value = "";
+    document.querySelector("#mes_Nacimiento").value = "";
+    document.querySelector("#anio_Nacimiento").value = "";
+    document.querySelector("#Sexo").value = "";
+    document.querySelector("#Entidad_Nacimiento").value = "";
+    document.querySelector("#salida").value = "";
 }
