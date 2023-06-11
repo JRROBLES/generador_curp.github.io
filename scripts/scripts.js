@@ -148,8 +148,12 @@ function convertirAX(arreglo){
 }
 
 function copiarCurp(){
-    navigator.clipboard.writeText(document.querySelector("#salida").value);
-    alert("El texto sé ha copiado al portapapeles");
+    if(!navigator.clipboard.writeText(document.querySelector("#salida").value)){
+        alert("Problemas al copiar al portapapeles, intenta de nuevo");
+    }else{
+        alert("El texto sé ha copiado al portapapeles");
+    }
+
 }
 
 function recargarPagina(){
