@@ -21,7 +21,7 @@ body  {
 }
 .descripcion p{
     text-align: justify;
-    padding: 1rem;
+    padding: 0.1rem 1rem;
 }
 .descripcion .resaltar_texto{
     font-weight: bold;
