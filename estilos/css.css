@@ -1,19 +1,26 @@
 html {
     box-sizing: border-box;
-}
-*, *:before, *:after {
+  }
+  *, *:before, *:after {
     box-sizing: inherit;
 }
+
 body  {
     font-family: 'Roboto', sans-serif;
+    background-color: lightgray;
 }
 .contenedor{
-    margin: 1rem auto;
+    margin: 0.1rem auto;
 }
 .titulo, .descripcion{
-    border-radius: 5px;
-    background-color: lightgrey;
-    margin: 0.1rem;
+    border-radius: 15px;
+    background-color: #203162;
+    color: white;
+    border-color: #98c6e7;
+    border-width: 5px;
+    border-style: solid;
+    -webkit-box-shadow: 0px 0px 15px -1px #000000; 
+    box-shadow: 0px 0px 15px -1px #000000;
 }
 .titulo h1{
     text-align: center;
@@ -31,25 +38,43 @@ body  {
 .formulario{
     display: flex;
     flex-direction: column;
-    background-color: lightgrey;
+    background-color: #203162;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 15px;
+    color: white;
+    border-color: #98c6e7;
+    border-width: 5px;
+    border-style: solid;
+    margin: 1rem 0;
+    -webkit-box-shadow: 0px 0px 15px -1px #000000; 
+    box-shadow: 0px 0px 15px -1px #000000;
+}
+.formulario label{
+    font-weight: bold;
 }
 .formulario input,select{
     text-transform: uppercase;
     margin: 0.50rem auto;
     width: 50%;
+    border-radius: 5px;
+    padding: 5px;
+}
+.formulario input#salida{
+    background-color: lightgray;
 }
 .btn{
     text-align: center;
     font-weight: bold;
-    margin: 1rem auto;
-    background-color: #181818;
-    color: white;
+    margin: 0.1rem auto;
+    background-color: #98c6e7;
+    color: #203162;
     width: 100px;
     padding: 0.25rem;
-    border-radius: 2px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 2px -1px #FFFFFF; 
+    box-shadow: 0px 0px 2px -1px #FFFFFF;
 }
+
 .btn:hover{
     cursor: pointer;
     background-color: white;
