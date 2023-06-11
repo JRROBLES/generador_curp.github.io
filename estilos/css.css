@@ -1,3 +1,10 @@
+:root {
+    --polynesian-blue: #064789;
+    --ucla-blue: #427AA1;
+    --alice-blue: #EBF2FA;
+    --asparagus: #679436;
+    --apple-green: #A5BE00;
+  }
 html {
     box-sizing: border-box;
   }
@@ -7,24 +14,21 @@ html {
 
 body  {
     font-family: 'Roboto', sans-serif;
-    background-color: lightgray;
+    background-color: var(--alice-blue);
 }
 .contenedor{
     margin: 0.1rem auto;
 }
 .titulo, .descripcion{
     border-radius: 15px;
-    background-color: #203162;
+    background-color: var(--polynesian-blue);
     color: white;
-    border-color: #98c6e7;
+    border-color: var(--apple-green);
     border-width: 5px;
     border-style: solid;
-    -webkit-box-shadow: 0px 0px 15px -1px #000000; 
-    box-shadow: 0px 0px 15px -1px #000000;
 }
 .titulo h1{
     text-align: center;
-    padding: 0.5rem;
 }
 .descripcion p{
     text-align: justify;
@@ -38,16 +42,14 @@ body  {
 .formulario{
     display: flex;
     flex-direction: column;
-    background-color: #203162;
+    background-color: var(--polynesian-blue);
     padding: 1rem;
     border-radius: 15px;
     color: white;
-    border-color: #98c6e7;
+    border-color: var(--apple-green);
     border-width: 5px;
     border-style: solid;
     margin: 1rem 0;
-    -webkit-box-shadow: 0px 0px 15px -1px #000000; 
-    box-shadow: 0px 0px 15px -1px #000000;
 }
 .formulario label{
     font-weight: bold;
@@ -66,19 +68,16 @@ body  {
     text-align: center;
     font-weight: bold;
     margin: 0.1rem auto;
-    background-color: #98c6e7;
-    color: #203162;
+    background-color: var(--ucla-blue);
     width: 100px;
     padding: 0.25rem;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 2px -1px #FFFFFF; 
-    box-shadow: 0px 0px 2px -1px #FFFFFF;
 }
 
 .btn:hover{
     cursor: pointer;
     background-color: white;
-    color: #181818;
+    color: var(--ucla-blue);
 }
 .botonera{
     display: flex;
