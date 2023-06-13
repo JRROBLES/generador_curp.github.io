@@ -147,13 +147,17 @@ function convertirAX(arreglo){
     }
 }
 
-function copiarCurp(){
-    if(!navigator.clipboard.writeText(document.querySelector("#salida").value)){
-        alert("Problemas al copiar al portapapeles, intenta de nuevo");
+async function copiarCurp(){
+    if(navigator.clipboard){
+        try {
+            await navigator.clipboard.writeText(document.querySelector("#salida").value);
+            alert("Texto copiado al portapapeles");
+        } catch (err) {
+            alert('Error al copiar al portapapeles error: ', err);
+        }
     }else{
-        alert("El texto sé ha copiado al portapapeles");
+        alert("Tu navegador o version no admite esta función, copia el CURP de manera manual.");
     }
-
 }
 
 function limpiarPagina(){
