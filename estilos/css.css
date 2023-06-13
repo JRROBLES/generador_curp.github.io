@@ -81,10 +81,16 @@ body  {
     .contenedor{
         width: 90%;
     }
+    .formulario input,select{
+        width: 80%;
+    }
 }
 @media only screen and (min-width: 769px) {
     .contenedor{
         width: 80%;
+    }
+    .formulario input,select{
+        width: 60%;
     }
 }
 @media only screen and (min-width: 1024px) {
