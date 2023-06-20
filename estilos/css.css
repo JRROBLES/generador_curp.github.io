@@ -28,6 +28,10 @@ body  {
     text-decoration: underline;
     font-style: italic;
 }
+.descripcion .version{
+    text-align: right;
+    font-weight: bold;
+}
 .formulario{
     display: flex;
     flex-direction: column;
