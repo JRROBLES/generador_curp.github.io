@@ -92,10 +92,10 @@ function calculaHomoclave(anio) {
 }
 
 function quitarNombres(nombre){
-    let nombresAQuitar = ["MARIA","JOSE"];
+    let nombresAQuitar = ["MARIA","JOSE","DEL"];
     for(let i = 0; i < nombresAQuitar.length; i ++){
         if(nombre.includes(nombresAQuitar[i])){
-            return nombre.replace(nombresAQuitar[i],'');
+            nombre = nombre.replace(nombresAQuitar[i],'');
         }
     }
     return nombre;
