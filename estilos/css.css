@@ -58,7 +58,6 @@ body  {
     text-align: center;
     font-weight: bold;
     margin: 0.1rem auto;
-    background-color: #427AA1;
     width: 100px;
     padding: 0.25rem;
     border-radius: 5px;
@@ -69,8 +68,20 @@ body  {
 }
 .btn:hover{
     cursor: pointer;
+}
+.btn_rojo{
+    background-color: #b63232;
+}
+.btn_rojo:hover{
     background-color: white;
-    color: #427AA1;
+    color: #b63232;
+}
+.btn_verde{
+    background-color: #288a24;
+}
+.btn_verde:hover{
+    background-color: white;
+    color: #288a24;
 }
 .botonera{
     display: flex;
