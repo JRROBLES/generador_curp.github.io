@@ -1,6 +1,6 @@
 //Código escrito por Jesús Rodríguez para el CS T-III Portales
 document.querySelector('#btn_calcular').addEventListener('click',calcularCurp);
-document.querySelector('#btn_copiar').addEventListener('click',copiarCurp);
+// document.querySelector('#btn_copiar').addEventListener('click',copiarCurp);
 document.querySelector('#btn_limpiar').addEventListener('click',limpiarPagina);
 
 function calcularCurp(){
