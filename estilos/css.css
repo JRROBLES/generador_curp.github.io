@@ -65,23 +65,19 @@ body  {
     border-style: solid;
     border-color: black;
     border-width: 1px;
+    background-color: #969c9e;
 }
 .btn:hover{
     cursor: pointer;
+    color: #969c9e;
+    background-color: #fff;
 }
-.btn_rojo{
-    background-color: #b63232;
+.btn_resaltado{
+    background-color: #246d8a;
 }
-.btn_rojo:hover{
+.btn_resaltado:hover{
     background-color: white;
-    color: #b63232;
-}
-.btn_verde{
-    background-color: #288a24;
-}
-.btn_verde:hover{
-    background-color: white;
-    color: #288a24;
+    color: #246d8a;
 }
 .botonera{
     display: flex;
