@@ -13,6 +13,7 @@ function calcularCurp(){
     nombre = quitarNombres(nombre);
     nombre = quitarEspacios(nombre);
     let apellidoP = document.querySelector("#Apellido_Paterno").value.toUpperCase();
+    apellidoP = quitarNombres(apellidoP);
     apellidoP = quitarEspacios(apellidoP);
     if (comprobarCampoVacio(apellidoP, "Apellido paterno") === 0){
         return;
@@ -22,6 +23,7 @@ function calcularCurp(){
         document.querySelector("#Apellido_Materno").value="XXXX";
         apellidoM = "XXXX"
     }
+    apellidoM = quitarNombres(apellidoM);
     apellidoM = quitarEspacios(apellidoM);
     let diaNacimiento = document.querySelector("#dia_Nacimiento").value;
     if (comprobarCampoVacio(diaNacimiento, "Dia de nacimiento") === 0){
@@ -76,8 +78,10 @@ function retornaVocal(texto){
 function retornaConsonante(texto){
     let consonantes = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
     for(let i = 1; i<texto.length; i++){
-        if(consonantes.includes(texto[i])){
-            return texto[i];
+        for(let j = 0; j<consonantes.length; j++){
+            if(texto[i] === consonantes[j]){
+                return consonantes[j];
+            }
         }
     }
 }
@@ -92,13 +96,20 @@ function calculaHomoclave(anio) {
 }
 
 function quitarNombres(nombre){
-    let nombresAQuitar = ["MARIA","JOSE","DEL"];
+    // Aquí es importante definir cada nombre 2 veces, uno con espacio antes y otro con espacio después.
+    let nombresAQuitar = ["MARIA ", "JOSE ", "DEL ", "Y ", "DE ", "LA ", "LOS "," MARIA", " JOSE", " DEL", " Y", " DE", " LA", " LOS"];
+    let ultimoNombreQuitado;
     for(let i = 0; i < nombresAQuitar.length; i ++){
         if(nombre.includes(nombresAQuitar[i])){
+            ultimoNombreQuitado = nombre;
             nombre = nombre.replace(nombresAQuitar[i],'');
         }
     }
-    return nombre;
+    nombre = quitarEspacios(nombre);
+    if (nombre.length === 0){
+        nombre = ultimoNombreQuitado;
+    }
+    return nombre;    
 }
 
 function quitarEspacios(txt){
