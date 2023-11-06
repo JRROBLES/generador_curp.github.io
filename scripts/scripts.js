@@ -13,11 +13,11 @@ function calcularCurp(){
     nombre = quitarNombres(nombre);
     nombre = quitarEspacios(nombre);
     let apellidoP = document.querySelector("#Apellido_Paterno").value.toUpperCase();
-    apellidoP = quitarNombres(apellidoP);
-    apellidoP = quitarEspacios(apellidoP);
     if (comprobarCampoVacio(apellidoP, "Apellido paterno") === 0){
         return;
     }
+    apellidoP = quitarNombres(apellidoP);
+    apellidoP = quitarEspacios(apellidoP);
     let apellidoM = document.querySelector("#Apellido_Materno").value.toUpperCase();
     if(apellidoM.length === 0 || apellidoM === ''){
         document.querySelector("#Apellido_Materno").value="XXXX";
@@ -152,7 +152,7 @@ function comprobarCampoVacio(input, nombreCampo){
 
 function convertirAX(arreglo){
     for(let i = 0; i < arreglo.length; i++){
-        if(arreglo[i] === "Ñ"){
+        if(arreglo[i] === "Ñ" || arreglo[i] === ""){
             arreglo[i] = "X"
         }
     }
