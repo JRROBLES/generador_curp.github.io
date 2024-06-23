@@ -10,21 +10,27 @@ function calcularCurp(){
         return;
     }
     //Recuerda que es importante primero ejecutar la función quitar nombres antes de quitar espacios
+    nombre = removerAcentos(nombre);
     nombre = quitarNombres(nombre);
     nombre = quitarEspacios(nombre);
+    console.log(nombre);
     let apellidoP = document.querySelector("#Apellido_Paterno").value.toUpperCase();
     if (comprobarCampoVacio(apellidoP, "Apellido paterno") === 0){
         return;
     }
+    apellidoP = removerAcentos(apellidoP);
     apellidoP = quitarNombres(apellidoP);
     apellidoP = quitarEspacios(apellidoP);
+    console.log(apellidoP);
     let apellidoM = document.querySelector("#Apellido_Materno").value.toUpperCase();
     if(apellidoM.length === 0 || apellidoM === ''){
         document.querySelector("#Apellido_Materno").value="XXXX";
         apellidoM = "XXXX"
     }
+    apellidoM = removerAcentos(apellidoM);
     apellidoM = quitarNombres(apellidoM);
     apellidoM = quitarEspacios(apellidoM);
+    console.log(apellidoM);
     let diaNacimiento = document.querySelector("#dia_Nacimiento").value;
     if (comprobarCampoVacio(diaNacimiento, "Dia de nacimiento") === 0){
         return;
@@ -120,6 +126,11 @@ function quitarEspacios(txt){
     }
 }
 
+function removerAcentos(texto) {
+    const acentos = {'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U'};
+    return texto.split('').map(letra => acentos[letra] || letra).join('');
+}
+
 // Esta función fua escrita por la IA de Bing
 function calcularDigitoVerificador(curp) {
     const valores = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4,'5': 5, '6': 6, '7': 7, '8': 8, '9': 9,'A': 10, 'B': 11, 'C': 12, 'D': 13, 'E': 14,'F': 15, 'G': 16, 'H': 17, 'I': 18, 'J': 19,'K': 20, 'L': 21, 'M': 22, 'N': 23, 'Ñ': 24,'O': 25, 'P': 26, 'Q': 27, 'R': 28, 'S': 29,'T': 30, 'U': 31, 'V': 32, 'W':33 , 'X' :34,'Y' :35 , 'Z' :36};
@@ -145,7 +156,7 @@ function quitarAntiSonantes(arreglo){
 
 function comprobarCampoVacio(input, nombreCampo){
     if(input.length == 0 || input == ''){
-        alert("El campo "+nombreCampo+" no puede estar vació");
+        alert("El campo '"+nombreCampo+"' no puede estar vació");
         return 0;
     }
 }
