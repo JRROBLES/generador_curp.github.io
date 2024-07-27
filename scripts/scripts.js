@@ -1,7 +1,9 @@
 //Código escrito por Jesús Rodríguez para el CS T-III Portales
 document.querySelector('#btn_calcular').addEventListener('click',calcularCurp);
-// document.querySelector('#btn_copiar').addEventListener('click',copiarCurp);
+document.querySelector('#btn_copiar').addEventListener('click',copiarCurp);
 document.querySelector('#btn_limpiar').addEventListener('click',limpiarPagina);
+document.querySelector('#btn-light-mode').addEventListener('click',changeToLightMode);
+document.querySelector('#btn-dark-mode').addEventListener('click',changeToDarkMode);
 
 function calcularCurp(){
     // Recuerda que la ejecución de las funciones termina con el primer return que encuentre la función
@@ -173,12 +175,11 @@ async function copiarCurp(){
     if(navigator.clipboard){
         try {
             await navigator.clipboard.writeText(document.querySelector("#salida").value);
-            alert("Texto copiado al portapapeles");
         } catch (err) {
             alert('Error al copiar al portapapeles error: ', err);
         }
     }else{
-        alert("Tu navegador o version no admite esta función, copia el CURP de manera manual.");
+        alert("Esta función solo está disponible en la versión web, copia el texto de manera manual");
     }
 }
 
@@ -192,4 +193,13 @@ function limpiarPagina(){
     document.querySelector("#Sexo").value = "";
     document.querySelector("#Entidad_Nacimiento").value = "";
     document.querySelector("#salida").value = "";
+}
+
+function changeToLightMode(){
+    const root = document.documentElement; 
+    root.setAttribute('data-theme','light');
+}
+function changeToDarkMode(){
+    const root = document.documentElement; 
+    root.setAttribute('data-theme','dark');
 }
