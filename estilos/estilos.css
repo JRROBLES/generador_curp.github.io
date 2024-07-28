@@ -1,12 +1,17 @@
 :root{
-    --bg-color: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgb(13, 29, 90) 100%);
+    --bg-color-header: #1c1c1c;
+    --bg-color-footer: #1c1c1c;
+    --bg-color: #161616;
     --h1-color: #FFF;
-    --bg-heroe-container: rgba(255, 255, 255, 0.09);
-    --text-heroe-container: #FFF;
-    --bg-color-bnt: #dcdddc;
-    --bg-color-bnt-hover: #FFF;
-    --bg-color-input-select: #000;
-    --borde-focus-input: #4d8cf8;
+    --bg-heroe-container: #1c1c1c;
+    --border-color-heroe-container: #383838;
+    --text-heroe-container: #c5c5c5;
+    --bg-color-bnt: #000;
+    --text-color-bnt: #c5c5c5;
+    --bg-color-bnt-hover: #292929;
+    --bg-color-input-select: transparent;
+    --borde-color: #383838;
+    --borde-focus-input: #FFF;
     --logo-bg-color: rgba(255, 255, 255, 0.5);
 }
 html {
@@ -18,17 +23,19 @@ html {
     padding: 0;
 }
 body{
+    display: flex;
+    flex-direction: column;
     background: var(--bg-color);
-    font-family: 'Roboto', sans-serif;
-    height: 100vh;
+    font-family: 'Poppins', sans-serif;
 }
 .container-header{
     width: 100%;
     padding: 0.1rem 0;
+    background: var(--bg-color-header);
 }
 .container-header .logo img{
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     background: var(--logo-bg-color);
     margin: 0 5rem;
     border-radius: 50%;
@@ -48,22 +55,23 @@ body{
   }
 .h1-container{
     width: 100%;
-    margin-bottom: 1rem;
+    margin: 2.5rem 0 1.5rem
 }
 .h1-container h1{
     text-align: center;
     color: var(--h1-color);
     margin: 0;
+    font-size: 24px;
 }
 .heroe-container{
     border-style: solid;
     border-radius: 0.5rem;
     border-width: 1px;
-    border-color: transparent;
-    margin: 0 auto 1rem;
+    border-color: var(--border-color-heroe-container);
+    margin: 1rem auto;
     padding: 1rem;
     background: var(--bg-heroe-container);
-    width: 90%;
+    width: 50%;
     color: var(--text-heroe-container);
 }
 .heroe-container .form{
@@ -77,9 +85,8 @@ body{
     margin: 0 auto;
     width: 80%;
     margin-bottom: 0.8rem;
-}
-.heroe-container .form .label-input-container label, .label-input-container-exit label{
-    font-weight: bold;
+    font-size: 14px;
+    color: #c5c5c5;
 }
 .heroe-container .form input, select, .label-input-container-exit input{
     text-transform: uppercase;
@@ -88,12 +95,18 @@ body{
     background: transparent;
     border-style: solid;
     border-radius: 0.3rem;
-    color: #FFF;
-    border-width: 2px;
+    color: var(--text-heroe-container);
+    border-width: 1px;
+    font-size: 14px;
+
 }
+.form select option{
+    background: var(--bg-heroe-container); /* Fondo de la opción seleccionada */
+    color: var(--text-heroe-container); /* Color del texto de la opción seleccionada */
+  }
 .form input:focus, select:focus, .label-input-container-exit input:focus{
     background: var(--bg-color-input-select);
-    border: 2px solid var(--borde-focus-input);
+    border-color: var(--borde-focus-input);
     outline: none; 
 }
 .label-input-container-exit{
@@ -104,11 +117,16 @@ body{
     width: 100%;
     margin: 1rem 0;
 }
+.label-input-container-exit input:focus{
+    border-color: var(--bg-heroe-container);
+    border-bottom-color: var(--borde-color);
+}
 .label-input-container-exit input{
     width: 50%;
-    font-weight: bold;
     text-align: center;
-    font-size: 1rem;
+    font-size: 18px;
+    border-color: var(--bg-heroe-container);
+    border-bottom-color: var(--borde-color);
 }
 .obligatorio{
     font-weight: bold;
@@ -120,13 +138,13 @@ body{
     padding: 0 1rem;
     margin: 1rem 0;
 }
-.important-text{
-    font-weight: bold;
-    color: #4a82f2;
+.instructions{
+    color: var(--text-color-bnt);
     padding: 0 1rem;
     text-decoration: none;
+    font-size: 12px;
 }
-.important-text ul{
+.instructions ul{
     list-style: none;
     margin: 0.5rem 0;
 }
@@ -137,7 +155,7 @@ body{
 }
 .buttons .btn{
     background-color: var(--bg-color-bnt);
-    color: #000;
+    color: var(--text-color-bnt);
     font-weight: bold;
     text-align: center;
     padding: 0.5rem 0;
@@ -149,7 +167,13 @@ body{
 .buttons .btn:hover{
     background: var(--bg-color-bnt-hover);
 }
+.footer{
+    width: 100%;
+    background-color: var(--bg-color-footer);
+    margin-top: 5rem;
+    color: var(--text-color-bnt);
+    padding: 1rem;
+}
 .version{
-    margin: 1rem;
     text-align: right;
 }
