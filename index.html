@@ -1,6 +1,6 @@
 <!-- Código escrito por Jesús Rodríguez -->
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="img/logo.svg">
     <link rel="stylesheet" href="estilos/normalize.css">
     <link rel="stylesheet" href="estilos/css.css">
-    <title>&gt; Generador de CURP &lt;</title>
+    <title>Generador de CURP</title>
 </head>
 <!-- Google tag (gtag.js) -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRJS9L3FLT"></script>
@@ -25,52 +25,52 @@
         <p id="btn-dark-mode">Modo obscuro</p>
     </div>
     <div class="h-container">
+        <div>
+            <h1 class="titulo typing-container">Generador de CURP</h1>
+        </div>
         <div class="contenedor">
             <div class="aside">
-                <div class="titulo typing-container">
-                    <h1>&gt; Generador de CURP &lt;</h1>
-                </div>
-                <div class="logo">
-                    <img src="img/logo.svg" alt="">
-                </div>
                 <div class="descripcion">
-                    <p>
-                        Ingresa la información solicitada en todos los campos y presiona el botón "Calcular" para obtener la CURP.
-                    </p>
-                    <ul>
-                        <li class="resaltar_texto">Los campos con <span class="obligatorio">*</span> son obligatorios.</li>
-                        <li class="resaltar_texto">Evita el uso de caracteres especiales (", ', -, ., *, etc.).</li>
-                        <li class="resaltar_texto">Puedes utilizar Ñ.</li>
-                        <li class="resaltar_texto">Evita el uso de acentos.</li>
-                        <li class="resaltar_texto">El CURP generado no es oficial.</li>
-                        <li class="resaltar_texto">Este sitio no almacena ningún dato ingresado.</li>
-                        <li class="resaltar_texto">Puedes reportar cualquier falla o anomalía en el cálculo al área de estadística.</li>
-                    </ul>
-                    <p class="version">Versión 1.5</p>
+                    <div class="ico-p-container">
+                        <img src="img/info.svg" alt="example">
+                        <p>Ingresa la información solicitada en todos los campos y presiona el botón "Calcular" para obtener la CURP.</p>
+                    </div>
+                    <div class="ico-p-container">
+                        <img src="img/caution.svg" alt="example">
+                        <p>Los campos con * son obligatorios.</p>
+                    </div>
+                    <div class="ico-p-container">
+                        <img src="img/forbiden.svg" alt="example">
+                        <p>Evita el uso de acentos y caracteres especiales (", ', -, ., *, etc.).</p>
+                    </div>
+                    <div class="ico-p-container">
+                        <img src="img/ok.svg" alt="example">
+                        <p>Puedes utilizar Ñ.</p>
+                    </div>
+                    <div class="ico-p-container">
+                        <img src="img/unnoficial.svg" alt="example">
+                        <p>El CURP generado no es oficial.</p>
+                    </div>
+                    <div class="ico-p-container">
+                        <img src="img/shield.svg" alt="example">
+                        <p>Este sitio no almacena ningún dato ingresado.</p>
+                    </div>
+                    <div class="ico-p-container">
+                        <img src="img/report.svg" alt="example">
+                        <p>Puedes reportar cualquier falla o anomalía en el cálculo <a href="mailto:rodriguez.robles93@gmail.com">aquí</a>.</p>
+                    </div>
+                    <div class="ico-p-container">
+                        <img src="img/version.svg" alt="example">
+                        <p class="version">Versión 1.5</p>
+                    </div>
                 </div>
             </div>
             <form action="" class="main formulario">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/name.svg" alt="icono-usuario">
-                    <label for="Nombre">Nombre(s) <span class="obligatorio">* </span> :</label>
-                </div>
-                <input type="text" id="Nombre" placeholder="Escribe el o los nombres">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/user.svg" alt="icono-usuario">
-                    <label for="Apellido_Paterno">Apellido Paterno <span class="obligatorio">* </span> :</label>
-                </div>
-                <input type="text" id="Apellido_Paterno" placeholder="Escribe el apellido paterno">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/user-card.svg" alt="icono-calendario">
-                    <label for="Apellido_Materno">Apellido Materno:</label>
-                </div>
-                <input type="text" id="Apellido_Materno" placeholder="Escribe el apellido materno">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/day.svg" alt="icono-calendario">
-                    <label for="dia_Nacimiento">Día de nacimiento <span class="obligatorio">* </span> :</label>
-                </div>
+                <input type="text" id="Nombre" placeholder="● Escribe el o los nombres *" required>
+                <input type="text" id="Apellido_Paterno" placeholder="● Escribe el apellido paterno *">
+                <input type="text" id="Apellido_Materno" placeholder="● Escribe el apellido materno *">
                 <select id="dia_Nacimiento">
-                    <option value="" disabled="" selected="">Selecciona el día de nacimiento</option>
+                    <option value="" disabled="" selected="">● Selecciona el día de nacimiento *</option>
                     <option value="01">01</option>
                     <option value="02">02</option>
                     <option value="03">03</option>
@@ -103,12 +103,8 @@
                     <option value="30">30</option>
                     <option value="31">31</option>
                 </select>
-                <div class="ico-label-container">
-                    <img class="icon" src="img/month.svg" alt="icono-calendario">
-                    <label for="mes_Nacimiento">Mes de nacimiento <span class="obligatorio">* </span> :</label>
-                </div>
                 <select id="mes_Nacimiento">
-                    <option value="" disabled="" selected="">Selecciona el mes de nacimiento</option>
+                    <option value="" disabled="" selected="">● Selecciona el mes de nacimiento *</option>
                     <option value="01">01.- ENERO</option>
                     <option value="02">02.- FEBRERO</option>
                     <option value="03">03.- MARZO</option>
@@ -122,26 +118,14 @@
                     <option value="11">11.- NOVIEMBRE</option>
                     <option value="12">12.- DICIEMBRE</option>
                 </select>
-                <div class="ico-label-container">
-                    <img class="icon" src="img/date.svg" alt="icono-calendario">                
-                    <label for="anio_Nacimiento">Año de nacimiento <span class="obligatorio">* </span> :</label>
-                </div>
-                <input type="number" id="anio_Nacimiento" min="1900" placeholder="ESCRIBE EL AÑO DE NACIMIENTO">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/gender.svg" alt="icono-genero">
-                    <label for="Sexo">Sexo de nacimiento <span class="obligatorio">* </span> :</label>
-                </div>
+                <input type="number" id="anio_Nacimiento" min="1900" placeholder="● ESCRIBE EL AÑO DE NACIMIENTO *">
                 <select id="Sexo">
-                    <option value="" disabled="" selected="">Selecciona el Genero</option>
+                    <option value="" disabled="" selected="">● Selecciona el Genero *</option>
                     <option value="M">2.- Femenino</option>
                     <option value="H">1.- Masculino</option>
                 </select>
-                <div class="ico-label-container">
-                    <img class="icon" src="img/mexico-map.svg" alt="icono-mapa">
-                    <label for="Entidad_Nacimiento">Entidad de nacimiento <span class="obligatorio">* </span> :</label>
-                </div>
                 <select id="Entidad_Nacimiento">
-                    <option value="" disabled="" selected="">Selecciona el estado</option>
+                    <option value="" disabled="" selected="">● Selecciona el estado *</option>
                     <option value="AS">01.- Aguascalientes</option>
                     <option value="BC">02.- Baja California</option>
                     <option value="BS">03.- Baja California Sur</option>
@@ -176,10 +160,6 @@
                     <option value="ZS">32.- Zacatecas</option>
                     <option value="NE">33.- Nacido en el extranjero</option>
                 </select>
-                <div class="ico-label-container">
-                    <img class="icon" src="img/arrow.svg" alt="icono-borrar">
-                    <label for="salida">CURP calculada:</label>
-                </div>
                 <input type="text" name="salida" id="salida" readonly placeholder="Tu CURP aparecerá aquí">
                 <div class="botonera">
                     <p class="btn" id="btn_copiar">

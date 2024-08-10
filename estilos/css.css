@@ -15,18 +15,23 @@
     select option {
         background-color: var(--body-bg-color);
     }
+    .ico-p-container img{
+        filter: invert(84%) sepia(78%) saturate(346%) hue-rotate(345deg) brightness(103%) contrast(95%);
+    }
+
 }
 :root[data-theme="light"]{
     /* estilos modo claro */
-    --body-bg-color: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    --aside-bg-color: #070798;
-    --main-bg-color: rgba(255, 255, 255, 0.40);
-    --h1-color: #FFF;
-    --p-color: #FFF;
-    --btn-dark-mode-bg: #000;
-    --btn-dark-mode-p: #FFF;
-    --focus-bottom-border: red;
-    --input-select-color: #000;
+    --body-bg-color: #f0f0f0; /*Color de fondo del body*/
+    --aside-bg-color: #FFF; /*Color de fondo del aside*/
+    --main-bg-color: #000; /*Color de fondo del main*/
+    --h1-color: #FFF; /*Color del titulo*/
+    --p-color: #333333; /*Color del texto*/
+    --btn-dark-mode-bg: #000; /*Color de fondo del botón que cambia a modo obscuro*/
+    --btn-dark-mode-p: #FFF; /*Color del texto del botón que cambia a modo obscuro*/
+    --focus-bottom-border: red; /*Color del borde inferior del input seleccionado*/
+    --input-select-color: #FFF; /*Color del texto de los input y selects*/
+    --main-txt-color: #FFF; /*Color del texto del main*/
     #btn-light-mode{
         display: none;
     }
@@ -46,6 +51,7 @@ body  {
 }
 .h-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -57,39 +63,30 @@ body  {
     box-shadow: 4px 5px 5px -1px rgba(0,0,0,0.75);
     -webkit-box-shadow: 4px 5px 5px -1px rgba(0,0,0,0.75);
     -moz-box-shadow: 4px 5px 5px -1px rgba(0,0,0,0.75);
-    width: 900px;
+    width: 68.7rem;
 }
 .aside{
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    border-radius: 5px 0 0 5px;
     border-width: 1px;
     border-style: solid;
     border-color: transparent;
     background-color: var(--aside-bg-color);
-    padding: 0 2rem;
+    padding: 0 1.5rem;
 }
-.titulo h1{
-    text-align: center;
+.titulo{
     color: var(--h1-color);
+    margin-bottom: 5rem;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    font-size: 1.75rem;
 }
 .descripcion p, .resaltar_texto{
     color: var(--p-color);
     text-align: justify;
     font-size: 18px;
-    margin-bottom: 5px;
-}
-.logo img{
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    background: var(--main-bg-color);
-    border-radius: 50%;
-}
-.resaltar_texto{
-    font-style: italic;
 }
 .descripcion .version{
     text-align: right;
@@ -99,38 +96,53 @@ body  {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    border-radius: 0 5px 5px 0;
     background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
 }
-.ico-label-container{
+.ico-p-container{
     display: flex;    
     align-items: center;
+    padding: 0 1rem;
 }
-.formulario .icon, .btn .icon{
+.ico-p-container img{
     width: 30px;
-    filter: invert(13%) sepia(26%) saturate(1065%) hue-rotate(175deg) brightness(95%) contrast(90%);
+    margin-right: 2rem;
+}
+.ico-p-container p a{
+    color: var(--p-color);
+}
+.btn .icon{
+    width: 30px;
     margin-right: 0.5rem;
 }
 .formulario .btn .icon{
     filter: invert(100%) sepia(91%) saturate(38%) hue-rotate(321deg) brightness(110%) contrast(110%);
 }
-.formulario label{
-    font-weight: bold;
-}
+select option {
+    background-color: #ffffff; /* Fondo de las opciones */
+    color: #000000; /* Color del texto */
+  }
 .formulario input,select{
+    border: none; /* Quita todos los bordes */
+    border-bottom: 1px solid #ffffff; /* Añade un borde inferior blanco */
+    padding: 0.5rem;
     text-transform: uppercase; /*texto en mayúsculas*/
-    margin: 2px auto;
-    border: none;          /* Sin borde */
-    border-bottom: 1px solid #000;  /* Borde inferior */
-    outline: none;         /* Sin borde de enfoque */
-    width: 80%;           /* Ancho completo del contenedor */
+    margin: 1rem auto;
+    width: 90%;           /* Ancho completo del contenedor */
     box-sizing: border-box; /* Incluir padding y borde en el ancho total */
     background-color: transparent; /* Color de fondo */
-    text-align: center;
     color: var(--input-select-color);
+    font-weight: bold;
 }
 .formulario input:focus,select:focus{
-    border-bottom: 1px solid var(--focus-bottom-border);  /* Borde inferior */
+    outline: none;
+}
+input::placeholder {
+    color: #ffffff; /* Color blanco para el placeholder */
+    opacity: 1; /* Asegura que el color se aplique con la máxima opacidad */
+  }
+.formulario select{
+    color: #FFF;
 }
 .formulario input#salida{
     font-weight: bold;
@@ -143,9 +155,9 @@ body  {
     justify-content: center;
     font-weight: bold;
     margin: 1rem auto;
-    width: 130px;
+    width: 9.375rem;
     padding: 0.25rem;
-    border-radius: 5px;
+    border-radius: 1px;
     color: white;
     border-style: solid;
     border-color: transparent;
@@ -162,11 +174,12 @@ body  {
     filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(7431%) hue-rotate(351deg) brightness(90%) contrast(114%);
 }
 .btn_resaltado{
-    background-color: #246d8a;
+    background-color: #FFD000;
+    color: #000;
 }
 .btn_resaltado:hover{
     background-color: white;
-    color: #246d8a;
+    color: #000;
 }
 #btn_copiar{
     background-color: rgba(0, 0, 0, 0.5);
@@ -184,28 +197,6 @@ body  {
     font-weight: bold;
     color: red;
     font-size: 18px;
-}
-.typing-container {
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    animation: typing 4s steps(30, end), blink-caret 0.75s step-end infinite;
-}
-@keyframes typing {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
-}
-@keyframes blink-caret {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: var(--h1-color);
-    }
 }
 .container-btn-user-mode{
     position: absolute;
