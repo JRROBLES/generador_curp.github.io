@@ -1,9 +1,12 @@
-//Código escrito por Jesús Rodríguez para el CS T-III Portales
 document.querySelector('#btn_calcular').addEventListener('click',calcularCurp);
 document.querySelector('#btn_copiar').addEventListener('click',copiarCurp);
 document.querySelector('#btn_limpiar').addEventListener('click',limpiarPagina);
-document.querySelector('#btn-light-mode').addEventListener('click',changeToLightMode);
-document.querySelector('#btn-dark-mode').addEventListener('click',changeToDarkMode);
+// document.querySelector('#dia_Nacimiento').addEventListener('keyup',);
+// document.querySelector('#mes_Nacimiento').addEventListener('keyup',);
+document.querySelector('#dia_Nacimiento').addEventListener('change',validarDiaNacimiento);
+document.querySelector('#mes_Nacimiento').addEventListener('change',validarMesNacimiento);
+document.querySelector('#Sexo').addEventListener('change',validarSexoNacimiento);
+document.querySelector('#Entidad_Nacimiento').addEventListener('change',validarEntidadNacimiento);
 
 function calcularCurp(){
     // Recuerda que la ejecución de las funciones termina con el primer return que encuentre la función
@@ -72,6 +75,8 @@ function calcularCurp(){
     CURP[13] = digitoVerificador.toString();
     convertirAX(CURP);
     document.querySelector("#salida").value = CURP.join('');
+    document.querySelector("#output").classList.add("validate")
+
 }
 
 function retornaVocal(texto){
@@ -193,13 +198,30 @@ function limpiarPagina(){
     document.querySelector("#Sexo").value = "";
     document.querySelector("#Entidad_Nacimiento").value = "";
     document.querySelector("#salida").value = "";
+    document.querySelector("#special_1").classList.remove('validate');
+    document.querySelector("#special_2").classList.remove('validate');
+    document.querySelector("#special_3").classList.remove('validate');
+    document.querySelector("#special_4").classList.remove('validate');
+    document.querySelector("#output").classList.remove('validate');
 }
 
-function changeToLightMode(){
-    const root = document.documentElement; 
-    root.setAttribute('data-theme','light');
+function validarDiaNacimiento(){
+    if (document.querySelector("#dia_Nacimiento").value != ""){
+        document.querySelector("#special_1").classList.add('validate');
+    }
 }
-function changeToDarkMode(){
-    const root = document.documentElement; 
-    root.setAttribute('data-theme','dark');
+function validarMesNacimiento(){
+    if (document.querySelector("#mes_Nacimiento").value != ""){
+        document.querySelector("#special_2").classList.add('validate');
+    }
+}
+function validarSexoNacimiento(){
+    if (document.querySelector("#Sexo").value != ""){
+        document.querySelector("#special_3").classList.add('validate');
+    }
+}
+function validarEntidadNacimiento(){
+    if (document.querySelector("#Entidad_Nacimiento").value != ""){
+        document.querySelector("#special_4").classList.add('validate');
+    }
 }

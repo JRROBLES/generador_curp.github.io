@@ -1,4 +1,3 @@
-<!-- Código escrito por Jesús Rodríguez -->
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
@@ -7,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="img/logo.svg">
     <link rel="stylesheet" href="estilos/normalize.css">
-    <link rel="stylesheet" href="estilos/css.css">
-    <title>&gt; Generador de CURP &lt;</title>
+    <link rel="stylesheet" href="estilos/estyles.css">
+    <title>Generador de CURP</title>
 </head>
 <!-- Google tag (gtag.js) -->
 <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRJS9L3FLT"></script>
@@ -19,179 +18,162 @@
 
   gtag('config', 'G-SRJS9L3FLT');
 </script> -->
-<body id>
-    <div class="container-btn-user-mode">
-        <p id="btn-light-mode">Modo claro </p>
-        <p id="btn-dark-mode">Modo obscuro</p>
-    </div>
+<body>
     <div class="h-container">
         <div class="contenedor">
             <div class="aside">
-                <div class="titulo typing-container">
-                    <h1>&gt; Generador de CURP &lt;</h1>
-                </div>
                 <div class="logo">
                     <img src="img/logo.svg" alt="">
+                </div>
+                <div class="titulo">
+                    <h1>Generador de CURP</h1>
                 </div>
                 <div class="descripcion">
                     <p>
                         Ingresa la información solicitada en todos los campos y presiona el botón "Calcular" para obtener la CURP.
                     </p>
                     <ul>
-                        <li class="resaltar_texto">Los campos con <span class="obligatorio">*</span> son obligatorios.</li>
-                        <li class="resaltar_texto">Evita el uso de caracteres especiales (", ', -, ., *, etc.).</li>
-                        <li class="resaltar_texto">Puedes utilizar Ñ.</li>
-                        <li class="resaltar_texto">Evita el uso de acentos.</li>
-                        <li class="resaltar_texto">El CURP generado no es oficial.</li>
-                        <li class="resaltar_texto">Este sitio no almacena ningún dato ingresado.</li>
-                        <li class="resaltar_texto">Puedes reportar cualquier falla o anomalía en el cálculo al área de estadística.</li>
+                        <li>Los campos con <span class="obligatorio">*</span> son obligatorios.</li>
+                        <li>Evita el uso de acentos y caracteres especiales (comas, puntos, guiones, ).</li>
+                        <li>Puedes utilizar Ñ.</li>
+                        <li>El CURP generado no es oficial.</li>
+                        <li>Este sitio no almacena ningún dato ingresado.</li>
+                        <li>Puedes reportar cualquier falla o anomalía en el cálculo al área de estadística.</li>
                     </ul>
                     <p class="version">Versión 1.5</p>
                 </div>
             </div>
             <form action="" class="main formulario">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/name.svg" alt="icono-usuario">
+                <div class="label-input-container">
+                    <input type="text" id="Nombre" required>
                     <label for="Nombre">Nombre(s) <span class="obligatorio">* </span> :</label>
                 </div>
-                <input type="text" id="Nombre" placeholder="Escribe el o los nombres">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/user.svg" alt="icono-usuario">
+                <div class="label-input-container">
+                    <input type="text" id="Apellido_Paterno" required>
                     <label for="Apellido_Paterno">Apellido Paterno <span class="obligatorio">* </span> :</label>
                 </div>
-                <input type="text" id="Apellido_Paterno" placeholder="Escribe el apellido paterno">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/user-card.svg" alt="icono-calendario">
+                <div class="label-input-container">
+                    <input type="text" id="Apellido_Materno" required>
                     <label for="Apellido_Materno">Apellido Materno:</label>
                 </div>
-                <input type="text" id="Apellido_Materno" placeholder="Escribe el apellido materno">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/day.svg" alt="icono-calendario">
+                <div class="label-input-container" id="special_1">
+                    <select id="dia_Nacimiento">
+                        <option value="" disabled selected required hidden></option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
                     <label for="dia_Nacimiento">Día de nacimiento <span class="obligatorio">* </span> :</label>
                 </div>
-                <select id="dia_Nacimiento">
-                    <option value="" disabled="" selected="">Selecciona el día de nacimiento</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                </select>
-                <div class="ico-label-container">
-                    <img class="icon" src="img/month.svg" alt="icono-calendario">
+                <div class="label-input-container" id="special_2">
+                    <select id="mes_Nacimiento">
+                        <option value="" disabled selected required hidden></option>
+                        <option value="01">01.- ENERO</option>
+                        <option value="02">02.- FEBRERO</option>
+                        <option value="03">03.- MARZO</option>
+                        <option value="04">04.- ABRIL</option>
+                        <option value="05">05.- MAYO</option>
+                        <option value="06">06.- JUNIO</option>
+                        <option value="07">07.- JULIO</option>
+                        <option value="08">08.- AGOSTO</option>
+                        <option value="09">09.- SEPTIEMBRE</option>
+                        <option value="10">10.- OCTUBRE</option>
+                        <option value="11">11.- NOVIEMBRE</option>
+                        <option value="12">12.- DICIEMBRE</option>
+                    </select>
                     <label for="mes_Nacimiento">Mes de nacimiento <span class="obligatorio">* </span> :</label>
                 </div>
-                <select id="mes_Nacimiento">
-                    <option value="" disabled="" selected="">Selecciona el mes de nacimiento</option>
-                    <option value="01">01.- ENERO</option>
-                    <option value="02">02.- FEBRERO</option>
-                    <option value="03">03.- MARZO</option>
-                    <option value="04">04.- ABRIL</option>
-                    <option value="05">05.- MAYO</option>
-                    <option value="06">06.- JUNIO</option>
-                    <option value="07">07.- JULIO</option>
-                    <option value="08">08.- AGOSTO</option>
-                    <option value="09">09.- SEPTIEMBRE</option>
-                    <option value="10">10.- OCTUBRE</option>
-                    <option value="11">11.- NOVIEMBRE</option>
-                    <option value="12">12.- DICIEMBRE</option>
-                </select>
-                <div class="ico-label-container">
-                    <img class="icon" src="img/date.svg" alt="icono-calendario">                
+                <div class="label-input-container">            
+                    <input type="number" id="anio_Nacimiento" min="1900" required>
                     <label for="anio_Nacimiento">Año de nacimiento <span class="obligatorio">* </span> :</label>
                 </div>
-                <input type="number" id="anio_Nacimiento" min="1900" placeholder="ESCRIBE EL AÑO DE NACIMIENTO">
-                <div class="ico-label-container">
-                    <img class="icon" src="img/gender.svg" alt="icono-genero">
+                <div class="label-input-container" id="special_3">
+                    <select id="Sexo">
+                        <option value="" disabled selected required hidden></option>
+                        <option value="M">2.- Femenino</option>
+                        <option value="H">1.- Masculino</option>
+                    </select>
                     <label for="Sexo">Sexo de nacimiento <span class="obligatorio">* </span> :</label>
                 </div>
-                <select id="Sexo">
-                    <option value="" disabled="" selected="">Selecciona el Genero</option>
-                    <option value="M">2.- Femenino</option>
-                    <option value="H">1.- Masculino</option>
-                </select>
-                <div class="ico-label-container">
-                    <img class="icon" src="img/mexico-map.svg" alt="icono-mapa">
+                <div class="label-input-container" id="special_4">
+                    <select id="Entidad_Nacimiento">
+                        <option value="" disabled selected required hidden></option>
+                        <option value="AS">01.- Aguascalientes</option>
+                        <option value="BC">02.- Baja California</option>
+                        <option value="BS">03.- Baja California Sur</option>
+                        <option value="CC">04.- Campeche</option>
+                        <option value="CL">05.- Coahuila de Zaragoza</option>
+                        <option value="CM">06.- Colima</option>
+                        <option value="CS">07.- Chiapas</option>
+                        <option value="CH">08.- Chihuahua</option>
+                        <option value="DF">09.- Ciudad de México</option>
+                        <option value="DG">10.- Durango</option>
+                        <option value="GT">11.- Guanajuato</option>
+                        <option value="GR">12.- Guerrero</option>
+                        <option value="HG">13.- Hidalgo</option>
+                        <option value="JC">14.- Jalisco</option>
+                        <option value="MC">15.- Estado de México</option>
+                        <option value="MN">16.- Michoacán</option>
+                        <option value="MS">17.- Morelos</option>
+                        <option value="NT">18.- Nayarit</option>
+                        <option value="NL">19.- Nuevo León</option>
+                        <option value="OC">20.- Oaxaca</option>
+                        <option value="PL">21.- Puebla</option>
+                        <option value="QT">22.- Querétaro</option>
+                        <option value="QR">23.- Quintana Roo</option>
+                        <option value="SP">24.- San Luis Potosí</option>
+                        <option value="SL">25.- Sinaloa</option>
+                        <option value="SR">26.- Sonora</option>
+                        <option value="TC">27.- Tabasco</option>
+                        <option value="TS">28.- Tamaulipas</option>
+                        <option value="TL">29.- Tlaxcala</option>
+                        <option value="VZ">30.- Veracruz</option>
+                        <option value="YN">31.- Yucatán</option>
+                        <option value="ZS">32.- Zacatecas</option>
+                        <option value="NE">33.- Nacido en el extranjero</option>
+                    </select>
                     <label for="Entidad_Nacimiento">Entidad de nacimiento <span class="obligatorio">* </span> :</label>
                 </div>
-                <select id="Entidad_Nacimiento">
-                    <option value="" disabled="" selected="">Selecciona el estado</option>
-                    <option value="AS">01.- Aguascalientes</option>
-                    <option value="BC">02.- Baja California</option>
-                    <option value="BS">03.- Baja California Sur</option>
-                    <option value="CC">04.- Campeche</option>
-                    <option value="CL">05.- Coahuila de Zaragoza</option>
-                    <option value="CM">06.- Colima</option>
-                    <option value="CS">07.- Chiapas</option>
-                    <option value="CH">08.- Chihuahua</option>
-                    <option value="DF">09.- Ciudad de México</option>
-                    <option value="DG">10.- Durango</option>
-                    <option value="GT">11.- Guanajuato</option>
-                    <option value="GR">12.- Guerrero</option>
-                    <option value="HG">13.- Hidalgo</option>
-                    <option value="JC">14.- Jalisco</option>
-                    <option value="MC">15.- Estado de México</option>
-                    <option value="MN">16.- Michoacán</option>
-                    <option value="MS">17.- Morelos</option>
-                    <option value="NT">18.- Nayarit</option>
-                    <option value="NL">19.- Nuevo León</option>
-                    <option value="OC">20.- Oaxaca</option>
-                    <option value="PL">21.- Puebla</option>
-                    <option value="QT">22.- Querétaro</option>
-                    <option value="QR">23.- Quintana Roo</option>
-                    <option value="SP">24.- San Luis Potosí</option>
-                    <option value="SL">25.- Sinaloa</option>
-                    <option value="SR">26.- Sonora</option>
-                    <option value="TC">27.- Tabasco</option>
-                    <option value="TS">28.- Tamaulipas</option>
-                    <option value="TL">29.- Tlaxcala</option>
-                    <option value="VZ">30.- Veracruz</option>
-                    <option value="YN">31.- Yucatán</option>
-                    <option value="ZS">32.- Zacatecas</option>
-                    <option value="NE">33.- Nacido en el extranjero</option>
-                </select>
-                <div class="ico-label-container">
-                    <img class="icon" src="img/arrow.svg" alt="icono-borrar">
-                    <label for="salida">CURP calculada:</label>
+                <div class="label-input-container" id="output">
+                    <input type="text" name="salida" id="salida" readonly>
+                    <label for="salida">Tu CURP aparecerá aquí:</label>
                 </div>
-                <input type="text" name="salida" id="salida" readonly placeholder="Tu CURP aparecerá aquí">
                 <div class="botonera">
                     <p class="btn" id="btn_copiar">
-                        <img class="icon" src="img/copy.svg" alt="icono-copiar">
                         Copiar
                     </p>
                     <p class="btn" id="btn_limpiar">
-                        <img class="icon" src="img/erase.svg" alt="icono-borrar">
                         Limpiar
                     </p>
                     <p class="btn btn_resaltado" id="btn_calcular">
-                        <img class="icon" src="img/play.svg" alt="icono-play">
                         Calcular
                     </p>
                 </div>
