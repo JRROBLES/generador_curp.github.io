@@ -58,7 +58,7 @@ body{
 }
 .label-input-container{
     position: relative;
-    margin: 15px 0 0 0;
+    margin: 0.9375rem 0 0 0;
 }
 .label-input-container input, select{
     padding: 0 1rem;
@@ -77,23 +77,23 @@ body{
     color: var(--text-color);
 }
 .label-input-container input:focus, select:focus{
-    border: 2px solid var(--border-focus-color); 
+    border: 0.125rem solid var(--border-focus-color); 
 }
 .label-input-container input:focus ~ label, select:focus ~ label{
-    top: -10px;
-    font-size: 12px;
+    top: -0.625rem;
+    font-size: 0.75rem;
     padding: 0 0.3125rem;
     color: var(--label-focus-color);
     font-weight: bold;
 }
 .label-input-container input:valid ~ label{
-    top: -10px;
-    font-size: 12px;
+    top: -0.625rem;
+    font-size: 0.75rem;
     padding: 0 0.3125rem;
 }
 .validate select:valid ~ label, .validate label{
-    top: -10px;
-    font-size: 12px;
+    top: -0.625rem;
+    font-size: 0.75rem;
     padding: 0 0.3125rem;
 }
 .aside .logo img{
@@ -108,7 +108,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     background-color: var(--btn-bg-color);
     width: 7.5rem;
     height: 3.125rem;
@@ -119,6 +119,10 @@ body{
 .botonera .btn:hover{
     cursor: pointer;
     background-color: var(--btn-hover-bg-color);
+}
+a{
+    text-decoration: none;
+    color: var(--text-color);
 }
 
 /* Móviles */
