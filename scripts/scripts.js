@@ -75,28 +75,27 @@ function calcularCurp(){
     CURP[13] = digitoVerificador.toString();
     convertirAX(CURP);
     document.querySelector("#salida").value = CURP.join('');
-    document.querySelector("#output").classList.add("validate")
-
+    document.querySelector("#output").classList.add("validate");
 }
 
 function retornaVocal(texto){
-    let vocales = ["A","E","I","O","U"]
+    let vocales = ["A","E","I","O","U"];
     for(let i = 1; i<texto.length; i++){
         if(vocales.includes(texto[i])){
             return texto[i];
         }
     }
+    return "X";
 }
 
 function retornaConsonante(texto){
     let consonantes = ['B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Y', 'Z'];
     for(let i = 1; i<texto.length; i++){
-        for(let j = 0; j<consonantes.length; j++){
-            if(texto[i] === consonantes[j]){
-                return consonantes[j];
-            }
+        if(consonantes.includes(texto[i])){
+            return texto[i];
         }
     }
+    return "X";
 }
 
 function calculaHomoclave(anio) {

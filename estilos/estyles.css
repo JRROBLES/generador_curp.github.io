@@ -4,6 +4,7 @@
     --btn-bg-color: #0b57d0; /*Color de fondo de los botones*/
     --btn-hover-bg-color: #0843a1; /*Color de fondo de los botones*/
     --btn-text-color: #FFF; /*Color del texto del botón*/
+    --border-color: #dcdcdc; /*Color del borde en estado normal*/
     --border-focus-color: #0b57d0; /*Color del borde de los select e inputs al estar seleccionados*/
     --label-focus-color: #0b57d0; /*Color de los labels cuando están seleccionados */
     --h1-color: #1f1f1f; /*Color de el encabezado*/
@@ -66,6 +67,7 @@ body{
     height: 1.875rem;
     outline: none;
     text-transform: uppercase;
+    border: 0.125rem solid var(--border-color);
 }
 .label-input-container label{
     position: absolute;
@@ -143,6 +145,7 @@ a{
     }
     .botonera{
         flex-direction: column-reverse;
+        margin: 0.625rem 0;
     }
     .btn{
         width: 90%;
