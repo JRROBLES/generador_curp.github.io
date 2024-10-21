@@ -68,6 +68,7 @@ body{
     outline: none;
     text-transform: uppercase;
     border: 0.125rem solid var(--border-color);
+    background-color: transparent;
 }
 .label-input-container label{
     position: absolute;
