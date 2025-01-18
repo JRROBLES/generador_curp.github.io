@@ -123,6 +123,9 @@ body{
     cursor: pointer;
     background-color: var(--btn-hover-bg-color);
 }
+.btn:active{
+    filter: brightness(70%);
+}
 a{
     text-decoration: none;
     color: var(--text-color);
